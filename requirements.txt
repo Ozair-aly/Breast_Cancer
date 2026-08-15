@@ -1,8 +1,8 @@
 streamlit
-pandas>
-numpy>
+pandas
+numpy
 scikit-learn
 plotly
 streamlit
-tensorFlow
+tensorflow
 keras
