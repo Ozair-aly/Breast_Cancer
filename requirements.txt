@@ -1,9 +1,8 @@
-streamlit>=1.38.0
-pandas>=2.0.0
-numpy>=1.26.0
-scikit-learn>=1.4.0
-plotly>=5.22.0
-streamlit>=1.35.0
-
-tensorFlow<=2.21.0
-
+streamlit
+pandas>
+numpy>
+scikit-learn
+plotly
+streamlit
+tensorFlow
+keras
