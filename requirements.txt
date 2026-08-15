@@ -3,5 +3,5 @@ pandas
 numpy
 scikit-learn
 plotly
-tensorflow==2.15.0
-keras==2.15.0
+tensorflow==2.21.0
+keras==3.15.1
