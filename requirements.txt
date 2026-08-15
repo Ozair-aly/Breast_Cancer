@@ -3,5 +3,5 @@ pandas
 numpy
 scikit-learn
 plotly
-streamlit
-tensorflow
+tensorflow==2.15.0
+keras==2.15.0
