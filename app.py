@@ -149,19 +149,19 @@ if st.session_state['run_prediction']:
 
     col_a, col_b, col_c = st.columns(3)
     with col_a:
-        st.markdown(f"<div class='metric-card'><div style='color:#5b6472;'>Prediction</div><div style='font-size:1.8rem;font-weight:700;color:{accent};'>{pred_label}</div></div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='metric-card'><div style='color:#000000;'>Prediction</div><div style='font-size:1.8rem;font-weight:700;color:{accent};'>{pred_label}</div></div>", unsafe_allow_html=True)
     with col_b:
-        st.markdown(f"<div class='metric-card'><div style='color:#5b6472;'>Risk score</div><div style='font-size:1.8rem;font-weight:700;color:{accent};'>{predicted_probability * 100:.1f}%</div></div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='metric-card'><div style='color:#000000;'>Risk score</div><div style='font-size:1.8rem;font-weight:700;color:{accent};'>{predicted_probability * 100:.1f}%</div></div>", unsafe_allow_html=True)
     with col_c:
-        st.markdown(f"<div class='metric-card'><div style='color:#5b6472;'>Assessment</div><div style='font-size:1.8rem;font-weight:700;color:{accent};'>{risk_level}</div></div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='metric-card'><div style='color:#000000;'>Assessment</div><div style='font-size:1.8rem;font-weight:700;color:{accent};'>{risk_level}</div></div>", unsafe_allow_html=True)
 
-    st.markdown(f"<div class='metric-card' style='margin-top:1rem;'><strong>Clinical summary:</strong> {callout}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='metric-card' style='margin-top:1rem; color:#000000;'><strong style='color:#000000;'>Clinical summary:</strong> <span style='color:#000000;'>{callout}</span></div>", unsafe_allow_html=True)
 
     st.write('')
 
     left_col, right_col = st.columns([1.2, 0.8])
     with left_col:
-        st.subheader('Prediction probability')
+        st.markdown("<h3 style='color: black; margin-bottom: 0.5rem;'>Prediction probability</h3>", unsafe_allow_html=True)
         prob_labels = ['Malignant', 'Benign']
         probability_plot = go.Figure(
             data=[go.Bar(
@@ -183,11 +183,11 @@ if st.session_state['run_prediction']:
         st.plotly_chart(probability_plot, use_container_width=True)
 
     with right_col:
-        st.subheader('Input snapshot')
+        st.markdown("<h3 style='color: black; margin-bottom: 0.5rem;'>Input snapshot</h3>", unsafe_allow_html=True)
         table_df = pd.DataFrame([{feature: values[feature] for feature in feature_names}])
         st.dataframe(table_df, use_container_width=True, hide_index=True)
 
-    st.subheader('Feature overview')
+    st.markdown("<h3 style='color: black; margin-bottom: 0.5rem;'>Feature overview</h3>", unsafe_allow_html=True)
     feature_df = pd.DataFrame({'Feature': feature_names, 'Value': [values[name] for name in feature_names]})
     st.dataframe(feature_df, use_container_width=True, hide_index=True)
 
