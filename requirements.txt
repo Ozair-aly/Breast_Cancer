@@ -9,5 +9,5 @@ joblib>=1.4.2
 numpy>=1.26.0
 scipy>=1.13.0
 pandas>=2.2.2
-tensorflow
-keras
+tensorflow>=2.18.0
+keras>=3.8.0
